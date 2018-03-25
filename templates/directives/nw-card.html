@@ -1,0 +1,12 @@
+<a href="#!complaints/{{complaint.complaintId}}" class="card-hover" ng-repeat="complaint in complaints">
+    <div class="card complaint-card">
+        <div class="card-header">Complaint</div>
+        <div class="card-body">
+            <div class="card-title">
+                Complaint ID: {{complaint.complaintId}}
+            </div>
+            <div class="card-text">Some sample text...</div>
+        </div>
+        <div class="card-footer">Status: {{complaint.status}}</div>
+    </div>
+</a>

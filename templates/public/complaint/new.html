@@ -1,0 +1,54 @@
+<form name="complaintForm">
+    <div class="add-images container" ng-show="!isLocation">
+        <legend>Add Photos of Site</legend>
+        <div class="row">
+            <div class="col-md-12">
+                <input type="file" class="btn btn-secondary img-btn" accept="image/*" multiple ngf-select ng-model="imgData.files"
+                    capture="camera" name="imgFile" required>
+            </div>
+        </div>
+        <div class="row">
+            <div ng-repeat="image in imgData.files" class="col-md-4" >
+                <div class="thumbnail">
+                    <img class="img-fluid thumb" ng-show="image.$valid" ngf-thumbnail="image">
+                </div>
+            </div>
+        </div>
+        <i>Add atleast one photo, you may choose multiple photos</i>
+        <div>
+            <button ng-click="complaintForm.imgFile.$valid &amp;&amp; nextStep()" class="btn btn-dark float-right" value="Next">Next</button>
+        </div>
+    </div>
+
+    <div class="container" ng-show="isLocation">
+        <a href ng-click="nextStep()">
+            <img src="images/back_36x36.png" height="30" width="30">
+        </a>
+        <legend>Add Location</legend>
+        {{coordinates}}
+        <div id="map-canvas" ng-controller="MapViewController"></div>
+        <div class="form-group">
+            <label>Description</label>
+            <textarea type="text" class="form-control" ng-model="formData.description"></textarea>
+        </div>
+        <div class="form-group">
+            <label>Severity</label>
+            <select class="form-control" ng-model="formData.severity">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label>Location</label>
+            <input type="text" ng-model="formData.location" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Pincode</label>
+            <input type="number" class="form-control" ng-model="formData.pincode">
+        </div>
+        <div class="form-group text-center">
+            <input type="submit" class="btn btn-primary" ng-click="complaintForm.$valid &amp;&amp; submitComplaint(imgData.files)">
+        </div>
+    </div>
+</form>

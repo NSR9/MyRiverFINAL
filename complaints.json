@@ -1,0 +1,38 @@
+[
+    {
+        "complaintId": 123456,
+        "description": "Embankment issue",
+        "Severity": "high",
+        "status": 1,
+        "area": "ganga",
+        "pincode": 123456,
+        "geometry": {
+            "type": "Point",
+            "coordinates": [12.1, 122.2]
+        }
+    },
+    {
+        "complaintId": 123457,
+        "description": "Erosion issue",
+        "Severity": "medium",
+        "status": 2,
+        "area": "Yamuna",
+        "pincode": 123454,
+        "geometry": {
+            "type": "Point",
+            "coordinates": [11.1, 130.1]
+        }
+    },
+    {
+        "complaintId": 123458,
+        "description": "Erosion issue low priority",
+        "Severity": "low",
+        "status": 3,
+        "area": "Krishna",
+        "pincode": 123458,
+        "geometry": {
+            "type": "Point",
+            "coordinates": [311.1, 133.1]
+        }
+    }
+]
